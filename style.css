@@ -45,12 +45,18 @@ h2 {
     font-size: 40px;
     font-weight: 300;
     text-align: center;
+    margin-bottom: 0px;
 }
 
-h2 > hr {
-    margin: 5px auto;
+.title > hr {
+    margin: 10px auto;
     width: 70px;
     border-color: #cb3167;
+    margin-bottom: 25px;
+}
+
+.story-text .title > hr {
+    border-color: white;
 }
 
 .container {
