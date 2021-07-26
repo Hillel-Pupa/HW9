@@ -1,0 +1,270 @@
+@font-face {
+    font-family: "Proxima Nova";
+    src: url("fonts/proxima-nova-thin.woff"),
+        url("fonts/proxima-nova-thin.woff2"),
+        url("fonts/ProximaNova-Regular.woff"),
+        url("fonts/ProximaNova-Regular.woff2");
+}
+
+@font-face {
+    font-family: "Forever Brush Script";
+    src: url("fonts/Forever Brush Script.woff"),
+        url("fonts/Forever Brush Script.woff2");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/roboto.regular.woff"), url("fonts/roboto.regular.woff2");
+}
+
+body {
+    color: white;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: "Proxima Nova";
+    font-weight: 300;
+    font-size: 60px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+h2 {
+    font-family: "Forever Brush Script";
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+}
+
+h2 > hr {
+    margin: 5px auto;
+    width: 70px;
+    border-color: #cb3167;
+}
+
+.container {
+    max-width: 100%;
+    max-width: 0 auto;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu li {
+    list-style-type: none;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+.nav {
+    background-color: transparent;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    font-family: "Proxima Nova";
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.banner {
+    background-image: url("images/bgbanner.png");
+    background-size: cover;
+    height: 800px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner-text {
+    max-width: 620px;
+    text-align: center;
+}
+
+.banner-text > p {
+    line-height: 1.5;
+}
+
+.sushi {
+    height: 250px;
+    margin: 80px;
+}
+
+.our-story {
+    background-color: #962323;
+    align-items: center;
+}
+
+.story-text {
+    max-width: 430px;
+    text-align: center;
+}
+
+.story-text > h2 > hr {
+    border-color: white;
+}
+
+.signatures-recipes {
+    background-image: url("images/recipesbg.png");
+    height: 300px;
+    background-size: cover;
+    align-items: center;
+}
+
+.recipes-text {
+    max-width: 430px;
+    text-align: center;
+}
+
+.our-menu {
+    color: black;
+}
+
+.food {
+    width: 430px;
+    margin-right: 100px;
+    margin-left: 100px;
+    font-weight: 600;
+}
+
+.menu-content {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.food-title {
+    padding-bottom: 20px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.name {
+    font-size: 15px;
+    color: black;
+}
+
+.price {
+    color: #cb3167;
+}
+
+.food > p {
+    padding-bottom: 50px;
+    color: #666769;
+    font-size: 15px;
+}
+
+.portfolio {
+    height: 320px;
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    background-color: #25262a;
+    font-size: 14px;
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #d3d4d4;
+    height: 300px;
+}
+
+.material-icons {
+    color: #c0235a;
+    padding: 5px 25px 5px 0;
+}
+
+.footer-top nav li {
+    padding: 10px 0;
+}
+
+.footer nav {
+    padding-bottom: 30px;
+}
+
+.footer ul {
+    list-style-type: none;
+}
+
+.footer-logo-text {
+    width: 245px;
+    line-height: 1.5;
+}
+
+.footer-logo-text > h5 {
+    font-size: 22px;
+    margin-top: 25px;
+}
+
+.copyrights {
+    background-color: #16171b;
+    color: #7b7c7e;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+    font-size: 14px;
+    font-family: "Roboto";
+}
+
+.copyrights-title {
+    padding: 0 15px;
+}
+
+.copyrights ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.copyrights ul > li {
+    padding: 0 15px;
+}
+
+.copyrights nav {
+    padding: 0 20px;
+}
+
+.copyrights a {
+    margin: 0 5px;
+}
+
+.contact-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+a:hover {
+    color: white;
+}
