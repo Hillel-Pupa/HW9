@@ -24,9 +24,25 @@
                     <ul class="flex-container nav-menu">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Menu</a></li>
+                        <li>
+                            <a href="#">Menu</a>
+                            <ul class="submenu">
+                                <li><a href="#">Menu1</a></li>
+                                <li><a href="#">Menu2</a></li>
+                                <li><a href="#">Menu3</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Faq</a></li>
-                        <li><a href="#">Page</a></li>
+                        <li>
+                            <a href="#">Page</a>
+                            <ul class="submenu">
+                                <li><a href="#story">Our Story</a></li>
+                                <li>
+                                    <a href="#recipes">Signatures Recipes</a>
+                                </li>
+                                <li><a href="#menu">Our Menu</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
@@ -44,7 +60,7 @@
                     </p>
                 </div>
             </section>
-            <section class="our-story flex-container">
+            <section id="story" class="our-story flex-container">
                 <img class="sushi" src="images/sushi.png" alt="sushi" />
                 <div class="story-text">
                     <div class="title">
@@ -60,7 +76,7 @@
                     </p>
                 </div>
             </section>
-            <section class="signatures-recipes flex-container">
+            <section id="recipes" class="signatures-recipes flex-container">
                 <div class="recipes-text">
                     <div class="title">
                         <h2>Singatures Recipes</h2>
@@ -75,7 +91,7 @@
                     </p>
                 </div>
             </section>
-            <section class="our-menu">
+            <section id="menu" class="our-menu">
                 <div class="title">
                     <h2>Our Menu</h2>
                     <hr />
@@ -176,10 +192,22 @@
                 </div>
             </section>
             <div class="portfolio">
-                <img src="images/bread.png" alt="bread" />
-                <img src="images/hachi.png" alt="hachi" />
-                <img src="images/burger.png" alt="burger" />
-                <img src="images/bread.png" alt="bread" />
+                <div class="portfolio-item">
+                    <img src="images/bread.png" alt="bread" />
+                    <div class="portfolio-overlay">bread</div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/hachi.png" alt="hachi" />
+                    <div class="portfolio-overlay">hachi</div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/burger.png" alt="burger" />
+                    <div class="portfolio-overlay">burger</div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/bread.png" alt="bread" />
+                    <div class="portfolio-overlay">bread</div>
+                </div>
             </div>
         </main>
         <footer class="footer">
