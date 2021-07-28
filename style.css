@@ -1,9 +1,16 @@
 @font-face {
     font-family: "Proxima Nova";
     src: url("fonts/proxima-nova-thin.woff"),
-        url("fonts/proxima-nova-thin.woff2"),
-        url("fonts/ProximaNova-Regular.woff"),
+        url("fonts/proxima-nova-thin.woff2");
+        font-style: normal;
+        font-weight: 300;
+}
+@font-face {
+    font-family: "Proxima Nova";
+    src: url("fonts/ProximaNova-Regular.woff"),
         url("fonts/ProximaNova-Regular.woff2");
+        font-style: normal;
+        font-weight: normal;
 }
 
 @font-face {
@@ -20,8 +27,12 @@
 body {
     color: white;
     font-family: "Proxima Nova";
+}
+
+p {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 a {
@@ -44,19 +55,28 @@ h2 {
     font-family: "Forever Brush Script";
     font-size: 40px;
     font-weight: 300;
+    position: relative;
     text-align: center;
     margin-bottom: 0px;
+    margin-top: 0px;
 }
 
-.title > hr {
-    margin: 10px auto;
-    width: 70px;
-    border-color: #cb3167;
-    margin-bottom: 25px;
+h2::after {
+    content: "";
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 1px;
+  background-color: #c0235a;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 35px;
 }
 
-.story-text .title > hr {
-    border-color: white;
+.story-text > h2::after {
+    background-color: #fff;
 }
 
 .container {
@@ -104,18 +124,14 @@ h2 {
     padding-top: 40px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
-.logo {
-    font-family: "Proxima Nova";
-    font-weight: 300;
-    font-size: 30px;
-}
 
 .banner {
     background-image: url("images/bgbanner.png");
     background-size: cover;
-    height: 800px;
+    min-height: 100vh;
     align-items: center;
     flex-direction: column;
 }
@@ -131,12 +147,13 @@ h2 {
 
 .sushi {
     height: 250px;
-    margin: 80px;
 }
 
 .our-story {
     background-color: #962323;
     align-items: center;
+    padding: 90px;
+    justify-content: space-evenly;
 }
 
 .story-text {
@@ -150,7 +167,7 @@ h2 {
 
 .signatures-recipes {
     background-image: url("images/recipesbg.png");
-    height: 300px;
+    padding: 80px;
     background-size: cover;
     align-items: center;
 }
@@ -162,6 +179,7 @@ h2 {
 
 .our-menu {
     color: black;
+    background-color: #f3f4f7;
 }
 
 .food {
@@ -194,7 +212,7 @@ h2 {
 
 .food > p {
     padding-bottom: 50px;
-    color: #666769;
+    color: #222222;
     font-size: 15px;
 }
 
@@ -202,7 +220,6 @@ h2 {
     height: 320px;
     display: flex;
     flex-direction: row;
-    overflow-y: scroll;
 }
 
 .footer-top {
@@ -252,7 +269,7 @@ h2 {
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    height: 100px;
+    padding: 30px;
     font-size: 14px;
     font-family: "Roboto";
 }
@@ -285,7 +302,7 @@ h2 {
 }
 
 a:hover {
-    color: white;
+    color: #c0235a;
 }
 
 .portfolio-item {
