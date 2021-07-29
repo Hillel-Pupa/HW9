@@ -1,14 +1,14 @@
 @font-face {
     font-family: "Proxima Nova";
-    src: url("fonts/proxima-nova-thin.woff"),
-        url("fonts/proxima-nova-thin.woff2");
+    src: url("fonts/ProximaNovaT-Thin.woff"),
+        url("fonts/ProximaNovaT-Thin.woff2");
         font-style: normal;
         font-weight: 300;
 }
 @font-face {
-    font-family: "Proxima Nova";
-    src: url("fonts/ProximaNova-Regular.woff"),
-        url("fonts/ProximaNova-Regular.woff2");
+    font-family: "Proxima NovaA";
+    src: url("fonts/ProximaNovaA-Regular.woff"),
+        url("fonts/ProximaNovaA-Regular.woff2");
         font-style: normal;
         font-weight: normal;
 }
@@ -35,7 +35,7 @@ body {
 
 body {
     color: white;
-    font-family: "Proxima Nova", "sans-serif";
+    font-family: "Proxima NovaA", "sans-serif";
     background-color: black;
 }
 
@@ -234,7 +234,7 @@ h2::after {
 }
 
 .food > p {
-    color: #222222;
+    color: #5d5d5d;
     font-size: 15px;
 }
 
