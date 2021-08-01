@@ -2,15 +2,15 @@
     font-family: "Proxima Nova";
     src: url("fonts/ProximaNovaT-Thin.woff"),
         url("fonts/ProximaNovaT-Thin.woff2");
-        font-style: normal;
-        font-weight: 300;
+    font-style: normal;
+    font-weight: 300;
 }
 @font-face {
     font-family: "Proxima NovaA";
     src: url("fonts/ProximaNovaA-Regular.woff"),
         url("fonts/ProximaNovaA-Regular.woff2");
-        font-style: normal;
-        font-weight: normal;
+    font-style: normal;
+    font-weight: normal;
 }
 
 @font-face {
@@ -25,12 +25,12 @@
 }
 
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 html,
 body {
-	height: 100%;
+    height: 100%;
 }
 
 body {
@@ -45,8 +45,7 @@ body {
 img {
     width: 100%;
     max-width: 100%;
-} 
-
+}
 
 .wrapper a {
     color: inherit;
@@ -75,19 +74,18 @@ h2 {
     margin-top: 0px;
 }
 
-
 h2::after {
     content: "";
-  bottom: 0;
-  left: 0;
-  width: 80px;
-  height: 1px;
-  background-color: #c0235a;
-  right: 0;
-  margin: 0 auto;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 35px;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background-color: #c0235a;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 35px;
 }
 
 .story-text > h2::after {
@@ -111,13 +109,6 @@ h2::after {
     justify-content: center;
 }
 
-.nav-menu li {
-    list-style-type: none;
-    padding: 0 15px;
-    font-size: 16px;
-    position: relative;
-}
-
 .submenu {
     visibility: hidden;
     position: absolute;
@@ -130,23 +121,9 @@ h2::after {
     margin: 10px 0;
 }
 
-.nav-menu > li:hover > a + ul {
-    visibility: visible;
-    transform: translateY(0);
+#menu__toggle {
+    opacity: 0;
 }
-
-.nav-menu li:hover a{
-    text-decoration: underline;
-}
-
-.nav {
-    background-color: transparent;
-    padding-top: 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 
 .banner {
     background-image: url("images/bgbanner.png");
@@ -250,7 +227,7 @@ h2::after {
 
 .footer-top {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     padding-top: 50px;
     background-color: #25262a;
@@ -258,7 +235,7 @@ h2::after {
     font-family: "Roboto";
     font-weight: 400;
     color: #d3d4d4;
-    height: 300px;
+
     align-items: baseline;
 }
 
@@ -361,7 +338,6 @@ a:hover {
     font-size: 20px;
     opacity: 0;
     transition: all 300ms ease-in-out;
-    
 }
 
 .portfolio-overlay > span {
@@ -371,25 +347,204 @@ a:hover {
 
 .portfolio-item:hover .portfolio-overlay {
     opacity: 1;
-    
 }
 
 .portfolio-item:hover .portfolio-overlay > span {
-    
     transform: scale(1);
 }
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 .content {
-	flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 .footer {
-	flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
-@media (min-width: px) {
+@media (min-width: 320px) {
+    h1 {
+        font-size: 32px;
+    }
 
+    .menu__btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
+    .menu__btn > span::before {
+        content: "";
+        top: -8px;
+    }
+    .menu__btn > span::after {
+        content: "";
+        top: 8px;
+    }
+
+    .menu__box {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: center;
+        background-color: #eceff1;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .menu__item:hover {
+        background-color: #cfd8dc;
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span {
+        transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu__toggle:checked ~ .menu__box {
+        visibility: visible;
+        left: 0;
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .our-story {
+        padding: 24px;
+    }
+
+    .sushi {
+        display: none;
+    }
+
+    .signatures-recipes {
+        padding: 24px;
+    }
+
+    .our-menu {
+        padding: 0;
+    }
+
+    .menu-content {
+        flex-direction: column;
+    }
+
+    .food {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .portfolio {
+        overflow-x: scroll;
+        height: auto;
+    }
+    .portfolio-item {
+        flex-shrink: 0;
+        width: 100vw;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .copyrights {
+        flex-direction: column;
+    }
+
+    .copyrights-top > ul {
+        display: flex;
+        flex-direction: column;
+    }
 }
+
+@media (min-width: 992px) {
+    .nav-menu > li:hover > a + ul {
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-menu li:hover a {
+        text-decoration: underline;
+    }
+
+    .nav {
+        background-color: transparent;
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-menu li {
+        list-style-type: none;
+        padding: 0 15px;
+        font-size: 16px;
+        position: relative;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 50px;
+        background-color: #25262a;
+        font-size: 14px;
+        font-family: "Roboto";
+        font-weight: 400;
+        color: #d3d4d4;
+
+        align-items: baseline;
+    }
+}
+
+/* .footer {
+    display: none;
+} */
+
+/* .copyrights {
+    display: none;
+} */
