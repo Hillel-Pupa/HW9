@@ -36,7 +36,7 @@ body {
 body {
     color: white;
     font-family: "Proxima NovaA", sans-serif;
-    background-color: #25262a;
+    background-color: #f3f4f7;
     font-style: normal;
     font-weight: 300;
     line-height: 1.5;
@@ -55,7 +55,7 @@ img {
 h1 {
     font-family: "Proxima Nova", sans-serif;
     font-weight: 300;
-    font-size: 60px;
+    font-size: 32px;
 }
 
 h5 {
@@ -109,28 +109,106 @@ h2::after {
     justify-content: center;
 }
 
-.submenu {
-    visibility: hidden;
-    position: absolute;
-    top: 100%;
-    transform: translateY(30px);
-    transition: opacity 0.4s linear, transform 0.3s;
+.nav-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
 }
 
-.submenu li {
-    margin: 10px 0;
+.nav-header nav {
+    z-index: 1;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+}
+.menu__btn > span::before {
+    content: "";
+    top: -8px;
+}
+.menu__btn > span::after {
+    content: "";
+    top: 8px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: rgb(23 23 23 / 96%);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu__item:hover {
+    background-color: #5555555e;
 }
 
 #menu__toggle {
     opacity: 0;
 }
 
-.nav-header {
-    background-color: transparent;
-    padding-top: 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+#menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}
+
+.submenu {
+    display: none;
 }
 
 .banner {
@@ -142,7 +220,7 @@ h2::after {
 }
 
 .banner-text {
-    max-width: 620px;
+    margin: 10px;
     text-align: center;
 }
 
@@ -150,19 +228,15 @@ h2::after {
     line-height: 1.5;
 }
 
-.sushi {
-    height: 250px;
-}
-
 .our-story {
     background-color: #962323;
     align-items: center;
-    padding: 90px;
     justify-content: space-evenly;
+    padding: 24px;
 }
 
 .story-text {
-    max-width: 430px;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -172,42 +246,40 @@ h2::after {
 
 .signatures-recipes {
     background-image: url("images/recipesbg.png");
-    padding: 80px;
     background-size: cover;
     align-items: center;
+    padding: 24px;
+}
+
+.sushi {
+    display: none;
 }
 
 .recipes-text {
-    max-width: 430px;
     text-align: center;
+    max-width: 100%;
 }
 
 .our-menu {
     color: black;
-    padding: 100px;
     background-color: #f3f4f7;
-}
-
-.our-menu > h2 {
-    margin-bottom: 80px;
+    padding: 0;
 }
 
 .food {
-    width: 50%;
+    width: 100%;
+    padding: 0 16px;
     margin-bottom: 50px;
-    padding-right: 70px;
-    padding-left: 70px;
-    font-weight: 600;
 }
 
 .menu-content {
-    flex-wrap: wrap;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .food-title {
-    padding-bottom: 20px;
+    padding: 20px 0;
     justify-content: space-between;
     display: flex;
 }
@@ -227,100 +299,17 @@ h2::after {
 }
 
 .portfolio {
-    overflow: hidden;
-    height: 320px;
+    overflow-x: scroll;
+    height: auto;
     display: flex;
     flex-direction: row;
-}
-
-.footer-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding-top: 50px;
-    background-color: #25262a;
-    font-size: 14px;
-    font-family: "Roboto";
-    font-weight: 400;
-    color: #d3d4d4;
-
-    align-items: baseline;
-}
-
-.material-icons {
-    color: #c0235a;
-    padding: 5px 25px 5px 0;
-}
-
-.footer-top nav li {
-    padding: 10px 0;
-}
-
-.footer ul {
-    list-style-type: none;
-}
-
-.footer-logo-text {
-    width: 245px;
-    line-height: 1.5;
-}
-
-.footer-logo-text > h5 {
-    font-size: 22px;
-    margin-top: 25px;
-}
-
-.copyrights {
-    background-color: #16171b;
-    color: #7b7c7e;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    padding: 30px;
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-}
-
-.copyrights-title {
-    padding: 0 15px;
-}
-
-.copyrights ul {
-    display: flex;
-    flex-direction: row;
-}
-
-.copyrights ul > li {
-    padding: 0 15px;
-}
-
-.copyrights nav {
-    padding: 0 20px;
-}
-
-.copyrights a {
-    margin: 0 5px;
-}
-
-.contact-line {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.contact-line > a {
-    display: flex;
-    align-items: center;
-}
-
-a:hover {
-    color: #c0235a;
 }
 
 .portfolio-item {
     position: relative;
     display: flex;
+    flex-shrink: 0;
+    width: 100vw;
 }
 
 .portfolio-item > img {
@@ -356,6 +345,96 @@ a:hover {
 .portfolio-item:hover .portfolio-overlay > span {
     transform: scale(1);
 }
+
+.material-icons {
+    color: #c0235a;
+    padding: 5px 25px 5px 0;
+}
+
+.footer-top {
+    flex-direction: column;
+    padding-left: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    background-color: #25262a;
+    font-size: 14px;
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #d3d4d4;
+    align-items: baseline;
+}
+
+.footer nav {
+    padding-top: 30px;
+}
+
+.footer-top nav li {
+    padding: 10px 0;
+}
+
+.footer ul {
+    list-style-type: none;
+}
+
+.footer-logo-text {
+    width: 245px;
+    line-height: 1.5;
+}
+
+.footer-logo-text > h5 {
+    font-size: 22px;
+    margin-top: 25px;
+}
+
+.copyrights {
+    background-color: #16171b;
+    color: #7b7c7e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}
+
+.copyrights-title {
+    padding: 0 15px;
+}
+
+.copyrights-top > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.copyrights ul > li {
+    padding: 0 15px;
+}
+
+.copyrights nav {
+    padding: 0 20px;
+}
+
+.copyrights a {
+    margin: 0 5px;
+}
+
+.contact-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact-line > a {
+    display: flex;
+    align-items: center;
+}
+
+a:hover {
+    color: #c0235a;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -368,165 +447,115 @@ a:hover {
     flex: 0 0 auto;
 }
 
-@media (min-width: 320px) {
-    h1 {
-        font-size: 32px;
-    }
+/* ipad version */
 
-    .menu__btn {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 26px;
-        height: 26px;
-        cursor: pointer;
-        z-index: 1;
-    }
-
-    .menu__btn > span,
-    .menu__btn > span::before,
-    .menu__btn > span::after {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #616161;
-    }
-    .menu__btn > span::before {
-        content: "";
-        top: -8px;
-    }
-    .menu__btn > span::after {
-        content: "";
-        top: 8px;
-    }
-
-    .menu__box {
-        display: block;
-        position: fixed;
-        visibility: hidden;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 80px 0;
-        list-style: none;
-        text-align: center;
-        background-color: rgb(23 23 23 / 96%);
-        box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .menu__item {
-        display: block;
-        padding: 12px 24px;
-        color: #333;
-        font-family: "Roboto", sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-        text-decoration: none;
-    }
-
-    .menu__item:hover {
-        background-color: #5555555e;
-    }
-
-    #menu__toggle:checked ~ .menu__btn > span {
-        transform: rotate(45deg);
-    }
-
-    #menu__toggle:checked ~ .menu__btn > span::before {
-        top: 0;
-        transform: rotate(0);
-    }
-
-    #menu__toggle:checked ~ .menu__btn > span::after {
-        top: 0;
-        transform: rotate(90deg);
-    }
-
-    #menu__toggle:checked ~ .menu__box {
-        visibility: visible;
-        left: 0;
-    }
-
-    .nav-header {
-        justify-content: center;
-        padding-top: 24px;
-    }
-
-    .nav-header nav {
-        z-index: 1;
-    }
-
-    .nav-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .our-story {
-        padding: 24px;
-    }
-
-    .story-text {
-        max-width: 100%;
-    }
-
-    .sushi {
-        display: none;
-    }
-
-    .signatures-recipes {
-        padding: 24px;
-    }
-
-    .recipes-text {
-        max-width: 100%;
-    }
-    .our-menu {
-        padding: 0;
-    }
-
-    .menu-content {
-        flex-direction: column;
-    }
-
-    .food {
-        width: 100%;
-        padding: 0 16px;
+@media (min-width: 768px) {
+    .portfolio-item {
+        width: 200px;
     }
 
     .portfolio {
-        overflow-x: scroll;
-        height: auto;
+        overflow-x: hidden;
     }
-    .portfolio-item {
-        flex-shrink: 0;
-        width: 100vw;
+
+    .nav-header {
+        justify-content: space-around;
+        padding: 20px 0;
+        align-items: baseline;
+    }
+
+    .nav-menu li {
+        list-style-type: none;
+        padding: 0 10px;
+        font-size: 16px;
+        position: relative;
+    }
+
+    .nav-menu > li:hover > a + ul {
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-menu li:hover a {
+        text-decoration: underline;
+    }
+
+    .submenu {
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        transform: translateY(30px);
+        transition: opacity 0.4s linear, transform 0.3s;
+        display: block;
+    }
+
+    .submenu li {
+        margin: 10px 0;
+    }
+
+    .menu__btn {
+        display: none;
+    }
+
+    .menu__box {
+        display: flex;
+        position: initial;
+        visibility: visible;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    #menu__toggle {
+        display: none;
+    }
+
+    .menu__item {
+        display: flex;
+        padding: 0 15px;
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    .nav-container {
+        flex-direction: row;
     }
 
     .footer-top {
-        flex-direction: column;
-        padding-left: 24px;
+        flex-direction: row;
+    }
+
+    .footer-logo-text {
+        width: 20%;
     }
 
     .footer nav {
-        padding-top: 30px;
+        padding-right: 26px;
     }
 
-    .copyrights {
-        flex-direction: column;
-    }
-
-    .copyrights-top > ul {
-        display: flex;
-        flex-direction: column;
+    .contact-us {
+        padding: 30px 0;
     }
 }
 
+/* desktop version */
+
 @media (min-width: 992px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    .nav-header {
+        background-color: transparent;
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .menu__btn {
+        display: none;
+    }
+
     .nav-menu > li:hover > a + ul {
         visibility: visible;
         transform: translateY(0);
@@ -543,29 +572,91 @@ a:hover {
         position: relative;
     }
 
+    .banner-text {
+        max-width: 620px;
+    }
+
+    .sushi {
+        display: block;
+        width: 330px;
+    }
+
+    .our-story {
+        padding: 90px;
+    }
+
+    .story-text {
+        max-width: 430px;
+    }
+
+    .signatures-recipes {
+        padding: 80px;
+    }
+
+    .recipes-text {
+        max-width: 430px;
+    }
+
+    .our-menu {
+        padding: 100px;
+    }
+
+    .our-menu > h2 {
+        margin-bottom: 80px;
+    }
+
+    .menu-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .food {
+        width: 50%;
+        padding: 0 26px;
+        margin-bottom: 50px;
+        padding-right: 70px;
+        padding-left: 70px;
+        font-weight: 600;
+    }
+
+    .portfolio {
+        overflow-x: hidden;
+    }
+
+    .portfolio-item {
+        width: initial;
+    }
+
     .footer-top {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        padding-top: 50px;
+        padding-top: 26px;
+        padding-bottom: 26px;
         background-color: #25262a;
         font-size: 14px;
         font-family: "Roboto";
         font-weight: 400;
         color: #d3d4d4;
-
         align-items: baseline;
+    }
+
+    .copyrights {
+        flex-direction: row;
+    }
+
+    .copyrights-top > ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: row;
     }
 
     .footer nav {
         padding-bottom: 30px;
+        padding: 0 24px;
     }
 }
-
-/* .footer {
-    display: none;
-} */
-
-/* .copyrights {
-    display: none;
-} */
