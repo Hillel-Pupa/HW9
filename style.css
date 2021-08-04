@@ -61,7 +61,7 @@ h1 {
 h5 {
     font-size: 18px;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 h2 {
@@ -121,7 +121,7 @@ h2::after {
 
 .nav-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .menu__btn {
@@ -269,7 +269,7 @@ h2::after {
 .food {
     width: 100%;
     padding: 0 16px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .menu-content {
@@ -366,11 +366,12 @@ h2::after {
 }
 
 .footer nav {
-    padding-top: 30px;
+    padding: 15px 0;
+    padding-right: 20px;
 }
 
 .footer-top nav li {
-    padding: 10px 0;
+    padding: 2px 0;
 }
 
 .footer ul {
@@ -451,7 +452,7 @@ a:hover {
 
 @media (min-width: 768px) {
     .portfolio-item {
-        width: 200px;
+        width: 25%;
     }
 
     .portfolio {
@@ -516,8 +517,8 @@ a:hover {
         font-size: 16px;
     }
 
-    .nav-container {
-        flex-direction: row;
+    .our-menu {
+        padding: 24px;
     }
 
     .footer-top {
@@ -539,7 +540,7 @@ a:hover {
 
 /* desktop version */
 
-@media (min-width: 992px) {
+@media (min-width: 976px) {
     h1 {
         font-size: 60px;
     }
@@ -548,7 +549,6 @@ a:hover {
         background-color: transparent;
         padding-top: 40px;
         display: flex;
-        justify-content: space-around;
         align-items: center;
     }
 
@@ -650,13 +650,12 @@ a:hover {
         flex-direction: row;
     }
 
-    .nav-container {
-        display: flex;
-        flex-direction: row;
-    }
-
     .footer nav {
         padding-bottom: 30px;
         padding: 0 24px;
+    }
+
+    .footer-top nav li {
+        padding: 10px 0;
     }
 }
